@@ -1,5 +1,6 @@
 import "./App.css";
 import Tweet from "./components/Tweet";
+import Footer from "./components/Footer";
 
 const tweetsArray = [
   {
@@ -41,6 +42,7 @@ function App() {
   return (
     <div className="App">
       <Tweet />
+      <Footer/>
     </div>
   );
 }
