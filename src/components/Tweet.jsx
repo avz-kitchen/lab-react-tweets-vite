@@ -1,35 +1,19 @@
+import ProfileImage from "./ProfileImage";
+import Timestamp from "./Timestamp";
+import Message from "./Message";
+import Actions from "./Actions";
 function Tweet(props) {
   return (
     <div className="tweet">
-      <img
-        src="https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/ih_logo.jpeg"
-        className="profile"
-        alt="profile"
-      />
-
       <div className="body">
         <div className="top">
-          <span className="user">
-            <span className="name">{props.tweets.user.name}</span>
-            <span className="handle">{props.tweets.user.handle}</span>
-          </span>
-
-          <span className="timestamp">{props.tweets.timestamp}</span>
+          <ProfileImage image={props.tweet.image} />
+          <Timestamp time={props.tweet.timestamp} />
         </div>
-
-        <p className="message">
-        {props.tweets.message}
-        </p>
-
-        <div className="actions">
-          {/* Font Awesome icons */}
-          <i className="far fa-comment" data-testid="comment-icon"></i>
-          <i className="fas fa-retweet" data-testid="retweet-icon"></i>
-          <i className="far fa-heart" data-testid="heart-icon"></i>
-          <i className="fas fa-share" data-testid="share-icon"></i>
-        </div>
+        <Message message={props.tweet.message} />
       </div>
 
+      <Actions action={props.tweet.action} />
       <i className="fas fa-ellipsis-h"></i>
     </div>
   );

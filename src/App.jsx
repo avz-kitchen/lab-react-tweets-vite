@@ -1,7 +1,6 @@
 import "./App.css";
 import Tweet from "./components/Tweet";
 import Footer from "./components/Footer";
-
 const tweetsArray = [
   {
     user: {
@@ -41,9 +40,11 @@ const tweetsArray = [
 function App() {
   return (
     <div className="App">
-      {tweetsArray.map(function(element){
-        return <Tweet  tweets = {element} />
-      })}
+      <Tweet />
+      {tweetsArray.map(tweet => {
+        return <Tweet tweet={tweet}/>
+      })
+      }
       <Footer/>
     </div>
   );
